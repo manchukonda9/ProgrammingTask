@@ -29,7 +29,7 @@ You can choose any programming language you like (e.g Java, Python, or C++). We 
 * Unittests
 * Dependency Management: PIP
 
-### 3 + Python libraries 
+### 3 Python libraries 
         + logging
         + sys
         + urllib 
