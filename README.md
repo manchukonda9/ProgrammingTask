@@ -19,7 +19,7 @@ Write a script that takes this plaintext file as an argument and downloads all i
 
 You can choose any programming language you like (e.g Java, Python, or C++). We would like to receive your code via GitHub or a similar service.
 
-### 1.2 Development stack used
+###2 Development stack used
 
 
 * IDE: Visual Studio Code
