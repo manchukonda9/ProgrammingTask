@@ -10,7 +10,7 @@ import errno
 # Check whether URL is valid
 def is_valid_url(url):
     parsed = urlparse(url.strip())
-	#condition to check networklocation which includes domain, port number and protocol name 
+
     if bool(parsed.netloc) and bool(parsed.scheme):
     	logging.info('Given url is a valid URL')
     	return True
@@ -99,10 +99,8 @@ def download_image_from_url(image_url, destination_folder):
 	if(destination_folder_status != 0):
 		return False
 
-	#Getting file name from url
 	filename = image_url.split("/")[-1]
 
-	# Making a GET request to 
 	try:
 		res = requests.get(image_url)
 
@@ -132,16 +130,13 @@ def download_image_from_url(image_url, destination_folder):
 #To save images retreived from url in given file to provided destination folder,  
 def download_images_from_file(filepath, destination_folder):
    
-	# Reading input file and get all lines data
 	with open(filepath, "r") as f:
 		file_urls = f.readlines()
 
 	logging.info('Total lines in input file : %s',len(file_urls))
 
-	#Intiate images downloaded count
 	count = 0
 
-	#Iterating through every line in the file
 	if len(file_urls) > 0 :
 		for i,input_url in enumerate(file_urls):
 			logging.info('Line{}: Reading {}'.format(i+1, input_url))
@@ -168,6 +163,15 @@ def main(filepath):
 
 	# setup logs
 	logging.basicConfig(filename='image-downloader.log', level=logging.INFO, format='%(filename)s - %(asctime)s : %(message)s')
+
+
+	#Check for input file permissions
+	input_file_status = check_permissions(filepath, os.R_OK)
+
+	if (input_file_status != 0):
+		logging.error("Error in provided filepath")
+		print("Error in provided filepath")
+		return
 
 	# Provide a destination folder name 
 	destination_folder_name = "Downloaded-Images"
