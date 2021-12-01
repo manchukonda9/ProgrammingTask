@@ -23,7 +23,6 @@ You can choose any programming language you like (e.g Java, Python, or C++). We 
 
 
 * IDE: Visual Studio Code
-* Scource code management: git, github
 * Operating System: MacOS Big Sur
 * Python virtual environment
 * Unittests
@@ -37,5 +36,30 @@ You can choose any programming language you like (e.g Java, Python, or C++). We 
         + errno
         + requests
         + unittest
+        
+### Requirements
+
+All requirements for this functionality are listed in requirements.txt. To install
+```
+$ python3 -m pip install -r requirements.txt
+```
+
+### Implementation
+```
+$ python3 imagedownloader.py image-links.txt
+```
+Pass the plain text file containing image urls as an arguement to imagedownloader.py file. (image-links.txt contains image urls)
+
+#### Output
+```
+4 Images Downloaded
+```
+Output for the code prints number of images successfully downloaded.
+
+### Testing
+```
+$ python3 unit_testing.py
+```
+This file contains few testcases to validate the imagedownloader.py functionalities
 
 
