@@ -1,0 +1,3 @@
+#-------- All requirements for Image downloader
+requests==2.26.0
+urllib3==1.26.7
